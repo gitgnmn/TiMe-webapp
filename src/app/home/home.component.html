@@ -4,19 +4,21 @@
   <a class="navbar-brand">Home</a>
 
 
+  <div>
+    <form class="form-inline">
+      <input class="form-control" type="search" placeholder="Name of the timer..." aria-label="Name of the timer">
+      <!-- <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bi bi-search" style="font-size: 1.2rem;"></i></button> -->
+    </form>
+  </div>
 
-  <form class="form-inline">
-    <input class="form-control" type="search" placeholder="Name of the timer..." aria-label="Name of the timer">
-    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search" style="font-size: 1.2rem;"></i> Search</button> -->
-  </form>
 </nav>
 
 
 
 
 
-<div class="container">
-  <div class="row">
+<div class="container" id="timerContainer">
+  <div class="row justify-content-center">
     <div *ngFor="let timer of timers">
 
       <div class="col-lg-6">

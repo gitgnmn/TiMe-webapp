@@ -36,20 +36,19 @@
         <div class="container-fluid">
             <h1 class="mt-4">{{timer.name}} timer</h1>
             <button class="btn btn-lg" type="button">
-                <i class="play"></i>
+                <i class="bi bi-play"></i>
             </button>
+            <circle-progress class="circlechart"
+            [percent]="timer.advance"
+            [radius]="100"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animation]="true"
+            [animationDuration]="300"
+            ></circle-progress>
         </div>
-
-        <circle-progress class="circlechart"
-        [percent]="timer.advance"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-        ></circle-progress>
 
 
 
