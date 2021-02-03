@@ -1,0 +1,74 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 150%;
+}
+
+@media (min-width: 300px) {
+    .menuItem {
+        width: auto;
+        height: 200px;
+        margin: 15px;
+    }
+}
+
+.menuItem {
+    display: inline-flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: #e5f3ff;
+    border-radius: 6px;
+    word-wrap: break-word;
+    float: left;
+
+    /* Doesn't work for long words in title*/
+    /* Make dynamic later on*/
+    width: 145px;
+    padding: 10px;
+}
+
+.menuItemTimer {
+    margin: 5px;
+    width: 100%;
+    overflow: auto;
+}
+
+.menuItemTitle {
+    margin: 5px;
+    width: 100%;
+}
+
+
+
+#mainEvent {
+    padding-top: 20px;
+
+    /*Make height dynamic later*/
+    height: 532px;
+    overflow: auto;
+}
+
+
+#popup {
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    width: 80%;
+    /* Fix horisontal position to dynamic later*/
+    left: 10%;
+    height: 400px;
+    text-align: center;
+    background-color: #e5f3ff;
+    border-radius: 12px;
+}
+
+#popupRemoveButton {
+    background: #58afff;
+    border: none;
+    border-radius: 50%;
+    color: white;
+}
+
+
+
