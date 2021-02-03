@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClockService } from './clock.service';
 import { SettingsComponent } from './settings/settings.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
@@ -23,6 +24,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },

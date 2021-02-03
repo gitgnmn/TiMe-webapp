@@ -45,7 +45,7 @@
                 <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="session.length/timer.goal" aria-valuemin="0" aria-valuemax="100">10%</div>
               </div> -->
               <!-- <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">10%</div> -->
-              <div class="progress-bar bg-success" role="progressbar" style="width: {{timer.advance}}%"
+              <div class="progress-bar bg-success" role="progressbar" style="width: 80%"
                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
 
 
@@ -61,7 +61,51 @@
 </div>
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form [formGroup]="newTimerForm" (ngSubmit)="onSubmit()">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create a new timer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="name" id="name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="goal" class="col-sm-2 col-form-label">Goal in hours</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" formControlName="goal" id="goal">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="startNow" id="startNow">
+                <label class="form-check-label" for="startNow">
+                 Start the timer directly
+                </label>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
 <div id="mainEvent" class="container">
   <!-- Main Event -->
@@ -72,7 +116,7 @@
 <footer>
   <div id="bottomMenu">
     <!-- <div> <button id="startButton" onClick="toggleTimer()"> <i class="bi bi-play-fill" style="font-size: 1.5rem;"></i> Start Timer </button></div> -->
-    <div> <button id="newTimerButton" onclick="showPopup()">+</button></div>
+    <div> <button id="newTimerButton" onclick="showPopup()" data-toggle="modal" data-target="#exampleModalCenter">+</button></div>
   </div>
 </footer>
 
