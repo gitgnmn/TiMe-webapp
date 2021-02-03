@@ -12,7 +12,7 @@ export class ClockDetailsComponent implements OnInit {
 
   timer;
 
-  
+
 
   constructor(
     private route: ActivatedRoute,
@@ -25,5 +25,7 @@ export class ClockDetailsComponent implements OnInit {
 
     this.timer = timers.find(timer => timer.id ===timerIdFromRoute);
   }
+
+  
 
 }

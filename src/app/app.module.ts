@@ -8,7 +8,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 
 import { RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { ClockService } from './clock.service';
 import { SettingsComponent } from './settings/settings.component';
 
@@ -20,7 +19,6 @@ import { SettingsComponent } from './settings/settings.component';
     HomeComponent,
     ClockDetailsComponent,
     TopBarComponent,
-    SidemenuComponent,
     SettingsComponent
   ],
   imports: [
