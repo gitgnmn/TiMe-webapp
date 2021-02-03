@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClockService } from './clock.service';
 import { SettingsComponent } from './settings/settings.component';
 
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -23,13 +23,22 @@ import { SettingsComponent } from './settings/settings.component';
   ],
   imports: [
     BrowserModule,
-    //NgbModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'timers/:timerId', component: ClockDetailsComponent},
       { path: 'settings', component: SettingsComponent},
-    ])
+    ]),
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+      
+    })
   ],
   providers: [ClockService],
   bootstrap: [AppComponent]

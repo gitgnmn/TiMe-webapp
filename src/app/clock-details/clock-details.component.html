@@ -39,6 +39,20 @@
                 <i class="play"></i>
             </button>
         </div>
+
+        <circle-progress class="circlechart"
+        [percent]="timer.advance"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="300"
+        ></circle-progress>
+
+
+
     </div>
     <!-- /#page-content-wrapper -->
 
