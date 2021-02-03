@@ -16,6 +16,12 @@ export class HomeComponent {
 
   playTimer(timerId: number) {
 
+  }  
+  
+  pauseTimer(timerId: number) {
+
   }
+
+
 
 }
