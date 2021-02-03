@@ -1,0 +1,74 @@
+body {
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 150%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.topRow {
+    /*display: flex;*/
+}
+
+#topMenu {
+    position: fixed;
+    top: 8px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.dropDownMenuImage {
+    height: 20px;
+    width: 20px;
+}
+
+#title {
+    position: static;
+    height: 42px;
+    left: 10px;
+    top: 10px;
+
+    font-size: 28px;
+    /* identical to box height, or 42px */
+
+    color: #6a515e;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+
+.main {
+}
+
+.bottom {
+    width: 100%;
+}
+
+#actionButton {
+    /*position: fixed;*/
+    width: 319.18px;
+    height: 66px;
+    /*left: 27px;
+    top: 650px;*/
+
+    background: linear-gradient(
+            238.59deg,
+            #5fd3ff -18.96%,
+            rgba(99, 214, 255, 0) 54.42%
+        ),
+        linear-gradient(96.53deg, #ffae88 -3.19%, #8f93ea 105.27%);
+    border-radius: 33px;
+
+    font-size: 24px;
+
+    color: #ffffff;
+}
