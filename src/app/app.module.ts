@@ -9,7 +9,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
-import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
+import { ClockService } from './clock.service';
+import { SettingsComponent } from './settings/settings.component';
 
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
@@ -20,7 +21,7 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
     ClockDetailsComponent,
     TopBarComponent,
     SidemenuComponent,
-    BottomBarComponent
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +29,11 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'timers/:timerId', component: ClockDetailsComponent},
+      { path: 'settings', component: SettingsComponent},
     ])
   ],
-  providers: [],
+  providers: [ClockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ClockService } from '../clock.service';
+import { timers } from '../timers';
 
 @Component({
   selector: 'app-clock-details',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockDetailsComponent implements OnInit {
 
-  constructor() { }
+  timer;
+
+  
+
+  constructor(
+    private route: ActivatedRoute,
+    private clockService: ClockService,
+  ) { }
 
   ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    const timerIdFromRoute = Number(routeParams.get('timerId'));
+
+    this.timer = timers.find(timer => timer.id ===timerIdFromRoute);
   }
 
 }
