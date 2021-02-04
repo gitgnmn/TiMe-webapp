@@ -1,4 +1,4 @@
-export const timers = [
+export const predefinedTimers = [
     {
       id: 1,
       name: 'ID2216',

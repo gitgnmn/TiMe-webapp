@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { predefinedTimers } from './timers';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,14 @@ export class ClockService {
   }
 
   deleteTimer(timerId: number) {
-    this.timers.splice(timerId, 1)
+    this.timers.splice(timerId, 1);
   }
 
   playTimer(timerId: number) {
-    this.timers[timerId]
+    this.timers[timerId];
   }
 
-  constructor() { }
+  constructor() { 
+    this.timers = predefinedTimers;
+  }
 }
