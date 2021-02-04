@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ClockService } from '../clock.service';
-import { timers } from '../timers';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +9,7 @@ import { timers } from '../timers';
 })
 export class HomeComponent implements OnInit{
 
-  timers = timers;
+  timers = [];
 
   newTimerForm = this.formBuilder.group({
     name: '',
@@ -18,10 +17,6 @@ export class HomeComponent implements OnInit{
     startNow: false,
   })
 
-
-  addTimer() {
-    
-  }
 
   playTimer(timerId: number) {
 
@@ -32,7 +27,7 @@ export class HomeComponent implements OnInit{
   }
 
   onSubmit(): void {
-    var idNew: number = timers.length +1;
+    var idNew: number = this.timers.length +1;
 
     var newTimer = {
       id: idNew,
@@ -44,13 +39,16 @@ export class HomeComponent implements OnInit{
       sessions: []
     }
 
-    this.timers.push(newTimer);
+    //this.timers.push(newTimer);
+    this.clockService.addTimer(newTimer);
   }
 
   constructor(
     private formBuilder: FormBuilder,
     private clockService: ClockService,
-  ) { }
+  ) { 
+    this.timers = clockService.getTimers();
+  }
 
     ngOnInit() {
 
