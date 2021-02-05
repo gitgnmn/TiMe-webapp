@@ -21,8 +21,8 @@
       </ul>
     </div>
 
-    <div class="dropdown" style="padding-left: 2em; min-width: 50px; max-width: 400px;">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+    <div  class="dropdown" style="padding-left: 2em; min-width: 50px; max-width: 400px;">
+        <button style="display:none;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="bi bi-gear"></i> Configure
         </button>
@@ -50,7 +50,7 @@
                
               
             <circle-progress class="circlechart"
-            [percent]="timer.advance"
+            [percent]="timer.current/timer.goal * 100"
             [radius]="100"
             [outerStrokeWidth]="16"
             [innerStrokeWidth]="8"
@@ -68,6 +68,6 @@
 
           <a *ngIf="!timer.running" (click)="playTimer(timer.id)" class="card-link"><i class="bi bi-play"
               style="font-size: 1.5rem;"></i>Play</a>
-              <a (click)="toggleHomeView()" class="nav-link" [routerLink]="['/']" > <img style="width: 30px;" src="../../assets/icons/arrow.png"> </a>
+              <a (click)="toggleHomeView()" class="nav-link" [routerLink]="['/']" > <img style="width: 30px;" src="https://img.icons8.com/pastel-glyph/2x/back.png"> </a>
         </div>
 

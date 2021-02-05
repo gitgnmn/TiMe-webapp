@@ -41,7 +41,7 @@ export class ClockDetailsComponent implements OnInit {
 
   removeTimer(){
     // TODO remove the timer
-    timerModel.toggleHomeView();
+    timerModel.removeTimer(this.timer);
   }
 
 }
