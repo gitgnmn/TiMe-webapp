@@ -19,8 +19,7 @@ export let timerModel = {
         if(this.onHomeView === 0){
             console.log("Now entering detailview!");
             // Update progress bar
-            
-            updateDetailProgressBar();
+            //updateDetailProgressBar();
         }
     },
 
@@ -42,11 +41,18 @@ export let timerModel = {
     },
 
     // TODO
-    /*removeTimer(timer) {
-        console.log(this.timers);
+    removeTimer(timer) {
+        timerModel.toggleHomeView();
+
+        // Fixes the timer parts
+        this.pauseTimer(timer.id); 
+        let positionOfCard = findPositionInArray(this.timers, timer);
         this.timers.splice(timer, 1);
-        console.log(this.timers);
-    },*/
+        // removes the card from homeview
+        let timerCard = document.getElementsByClassName("toRemove")[positionOfCard];
+        console.log(timerCard);
+        timerCard.remove();  
+    },
 } ;
 
 function increment(timer) {
@@ -67,7 +73,7 @@ function increment(timer) {
             }
   
             increment(timer); 
-        }, 60);
+        }, 60000);
     }
   }
 
@@ -81,11 +87,15 @@ function updateHomeProgressBar(timer){
     }
 }
 
-function updateDetailProgressBar(){
-    /*if(timer.goal != 0 && timer.goal > timer.current ){
+function findPositionInArray(timers, timer){
+    return timers.indexOf(timer);
+}
+
+/*function updateDetailProgressBar(){
+    if(timer.goal != 0 && timer.goal > timer.current ){
         // Update circular progressbar to timer.current / timer.goal * 100 %
     }
     else{
         // Update circular progressbar to 100%
-    }*/
-}
+    }
+}*/
