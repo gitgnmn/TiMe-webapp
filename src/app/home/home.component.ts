@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ClockService } from '../clock.service';
+import { timerModel } from '../model';
 
 @Component({
   selector: 'app-home',
@@ -17,14 +18,33 @@ export class HomeComponent implements OnInit{
     startNow: false,
   })
 
+  toggleHomeView(){
+    timerModel.toggleHomeView();
+  }
 
   playTimer(timerId: number) {
-
-  }  
-  
-  pauseTimer(timerId: number) {
-
+    timerModel.playTimer(timerId);
   }
+  /*playTimer(timerId: number) {
+    let timer = this.timers.find(timer => {
+      return timer.id === timerId;
+    })
+    timer.running = true;
+
+    // Adds 1 min to timer each min :)
+    increment(timer);
+  } */ 
+
+
+  pauseTimer(timerId: number) {
+    timerModel.pauseTimer(timerId);
+  }
+  /*pauseTimer(timerId: number) {
+    let timer = this.timers.find(timer => {
+      return timer.id === timerId;
+    })
+    timer.running = false;
+  }*/
 
   onSubmit(): void {
     var idNew: number = this.timers.length +1;
@@ -39,7 +59,15 @@ export class HomeComponent implements OnInit{
       sessions: []
     }
 
-    //this.timers.push(newTimer);
+    if(newTimer.goal < 0){
+      newTimer.goal = newTimer.goal * -1;
+      console.log("Turned goal into a positive! Don't allow user to input negative numbers later on");
+    }
+
+    timerModel.timers.push(newTimer);
+    if(newTimer.running)
+      timerModel.playTimer(newTimer.id);
+    //console.log(timerModel.timers);
     this.clockService.addTimer(newTimer);
   }
 
